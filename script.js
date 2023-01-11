@@ -1,4 +1,5 @@
 // Assignment code here
+/*
 var lowerCase = "abcdef";
 var upperCase = "ABCDEF";
 var numbers = "12345";
@@ -25,7 +26,59 @@ function generatePassword() {
     return output
 
 }
+*/
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var specialCharacters = "!@#$%^&*()-+";
 
+function generatePassword() {
+  var length = parseInt(window.prompt("Type the length of the password with 8 characters and not more than 128"));
+
+  if (length < 8) {
+    alert("The length entered is less than 8");
+    return "error";
+  }
+
+  if (length > 128) {
+    alert("The length entered is more than 128");
+    return "error";
+  }
+  
+  var lower = confirm("Do you want lowercase in your password?");
+
+  if (confirm("Use lowercase") == true) {
+    passwordCharacters += lowerCase;
+  } 
+
+  if (confirm("Use uppercase") == true) {
+    passwordCharacters += upperCase;
+  }
+
+  if (confirm("Use numbers") == true) {
+    passwordCharacters += numbers;
+  }
+
+  if (confirm("Use special characters") == true) {
+    passwordCharacters += specialCharacters;
+  }
+
+  if (passwordCharacters.length == 0) {
+    return "error";
+  }
+  
+
+  
+
+  var output = "";
+  var passwordCharacters = lowerCase + upperCase + numbers + specialCharacters;
+  for (var i = 0; i < length; i++) {
+    output += passwordCharacters[Math.floor(passwordCharacters.length * Math.random())];
+  }
+  return output
+
+  
+}
 
 
 // Get references to the #generate element
