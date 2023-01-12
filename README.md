@@ -8,3 +8,6 @@ An application that generates a random password.
 <div text-align="center">
 <img src="./images/Onelle_Fullente_Password.png" alt="Password">
 </div>
+
+## Deployed Site
+https://onelle11.github.io/Password-Generator/
