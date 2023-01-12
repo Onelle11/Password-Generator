@@ -32,6 +32,8 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialCharacters = "!@#$%^&*()-+";
 
+var passwordCharacters = "";
+
 function generatePassword() {
   var length = parseInt(window.prompt("Type the length of the password with 8 characters and not more than 128"));
 
@@ -45,7 +47,7 @@ function generatePassword() {
     return "error";
   }
   
-  var lower = confirm("Do you want lowercase in your password?");
+  var pw = confirm("Do you want lowercase, uppercase, numbers, and special characters in your password?");
 
   if (confirm("Use lowercase") == true) {
     passwordCharacters += lowerCase;
@@ -71,7 +73,7 @@ function generatePassword() {
   
 
   var output = "";
-  var passwordCharacters = lowerCase + upperCase + numbers + specialCharacters;
+  /* var passwordCharacters = lowerCase + upperCase + numbers + specialCharacters; */
   for (var i = 0; i < length; i++) {
     output += passwordCharacters[Math.floor(passwordCharacters.length * Math.random())];
   }
